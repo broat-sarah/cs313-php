@@ -146,6 +146,11 @@ main #content {
     height: auto;
 }
 
+form {
+    text-align: left;
+    display: inline-block;
+}
+
 /* MAIN section - INDEX */
 
 
@@ -180,6 +185,11 @@ main #text-index {
     position: relative;
     width: 600px;
     margin-top: 5px;
+}
+
+main #text-index p {
+    display: inline;
+    margin: 0 auto;
 }
 
 

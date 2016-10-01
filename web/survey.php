@@ -7,7 +7,7 @@ $movie = filter_input(INPUT_POST, 'movie');
 $sidekick = filter_input(INPUT_POST, 'sidekick');
 
 
-$herofile = fopen("web/hero.txt", "a") or die("Unable to open file!");
+$herofile = fopen("hero.txt", "a") or die("Unable to open file!");
     $txt = "$hero\n$villain\n$movie\n$sidekick\n";
     fwrite($herofile, $txt);
     fclose($herofile);

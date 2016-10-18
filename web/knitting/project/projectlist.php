@@ -9,8 +9,7 @@
             <!-- display links for  -->
             <?php foreach ($projects as $project) : ?>
             <li>
-                <a href="?action=view_project&amp;projectid=<?php 
-                          echo $project['projectid']; ?>">
+                <a href="?action=view_project">
                     <?php echo $project['projectname']; ?>
                 </a>
             </li>

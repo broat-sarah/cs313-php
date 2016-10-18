@@ -18,29 +18,24 @@ switch( $action ) {
         $projectid = filter_input(INPUT_GET, 'projectid', 
             FILTER_VALIDATE_INT);
         if ($projectid == NULL || $projectid == FALSE) {
-            $projectid = 1;
-        }
-        $projectname = get_project_name($projectid);
+        }    
         $projects = get_project();
         include('../project/projectlist.php');
         break;
     case 'view_project' :
-        $projectid = filter_input(INPUT_GET, 'projectid', 
-            FILTER_VALIDATE_INT);   
-        if ($projectid == NULL || $orojectid == FALSE) {
-            $error = 'Missing or incorrect project id.';
-            include('../errors/error.php');
-        } else {
-            $projects = get_projects();
-        }
+        $projectid = filter_input(INPUT_GET, 'projectid');  
+        $yarnid = filter_input(INPUT_GET, 'yarnid');
+        $needleid = filter_input(INPUT_GET, 'needleid');
+        $projectview = get_project_view($yarnid, $needleid);
+        
         // Get project data
         
-        $projectname = $projects['projectname'];
-        $projectdate = $projects['projectstartdate'];
-        $projectype = $projects['projecttype'];
-        $projectyarn = $projects['yarnid'];
-        $projectneedle = $projects['needleid'];
-        $projectmisc = $projects['miscid'];
+        /*$projectname = $projects[0];
+        $projectdate = $projects[1];
+        $projectype = $projects[2];
+        $projectyarn = $projects[3];
+        $projectneedle = $projects[4];
+        $projectmisc = $projects[5]; */
         
         
         include('../project/project_view.php');

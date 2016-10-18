@@ -2,22 +2,28 @@
 
 function get_project() {
     global $db;
-    $query = 'SELECT * FROM project
-              ORDER BY projectid';
+    $query = 'SELECT * FROM project';
     $statement = $db->prepare($query);
     $statement->execute();
-    return $statement;    
+    $projects = $statement->fetchAll();
+    $statement->closeCursor();
+    return $projects;   
 }
 
-function get_project_name($projectid) {
+function get_project_view($yarnid, $needleid) {
     global $db;
-    $query = 'SELECT * FROM project
-              WHERE project = :project';    
+    $query = 'SELECT * FROM project p
+            INNER JOIN yarn y on p.yarnid = y.yarnid
+            INNER JOIN NEEDLE n on p.needleid = n.needleid
+            WHERE yarnid = :yarnid AND needleid = :needleid
+            ORDER BY projectid ASC';    
     $statement = $db->prepare($query);
-    $statement->bindValue(':project', $projectid);
+    $statement->bindValue(':yarnid', $yarnid);
+    $statement->bindValue(':needleid', $needleid);
     $statement->execute();    
-    $project = $statement->fetch();
+    $projectview = $statement->fetchAll();
     $statement->closeCursor();    
-    $projectname = $project['projectname'];
-    return $projectname;
-}
+    return $projectview;
+} 
+
+

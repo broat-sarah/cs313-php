@@ -9,24 +9,24 @@ $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
     if ($action == NULL) {
-        $action = 'list_projects';
+        $action = 'view_project';
     }
 }  
 
 switch( $action ) {
-    case 'list_projects' :
+    /*case 'list_projects' :
         $projectid = filter_input(INPUT_GET, 'projectid', 
             FILTER_VALIDATE_INT);
         if ($projectid == NULL || $projectid == FALSE) {
         }    
         $projects = get_project();
         include('../project/projectlist.php');
-        break;
+        break;*/
     case 'view_project' :
         $projectid = filter_input(INPUT_GET, 'projectid');  
         $yarnid = filter_input(INPUT_GET, 'yarnid');
         $needleid = filter_input(INPUT_GET, 'needleid');
-        $projectview = get_project_view($yarnid, $needleid);
+        $projectview = get_project_view();
         
         // Get project data
         

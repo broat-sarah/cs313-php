@@ -1,16 +1,51 @@
 <?php include '../view/header.php'; ?>
 <main>
     <section>
-        <?php foreach ($projectview as $project) : ?>
-            <h1><?php echo $project['projectname']; ?></h1>
-                <div>
-                    <p><b>Project Type:</b> <?php echo $project['projecttype']; ?></p>
-                    <p><b>Start Date:</b> <?php echo $project['projectstartdate']; ?></p>
-                    <p><b>Yarn:</b> <?php echo $project['yarnid']; ?></p>
-                    <p><b>Needles:</b> <?php echo $project['needleid']; ?></p>
-                    <p><b>Miscellaneous:</b> <?php echo $project['miscid']; ?></p>
-                </div>
-        <?php endforeach; ?>
+        <table>
+                    <tr>
+                        <th>
+                            <strong>Project Name</strong>
+                        </th>
+                        <th>
+                            <strong>Project Type</strong>
+                        </th>
+                        <th>
+                            <strong>Start Date</strong>
+                        </th>
+                        <th>
+                            <strong>Yarn</strong>
+                        </th>
+                        <th>
+                            <strong>Needle</strong>
+                        </th>
+                        <th>
+                            <strong>Miscellaneous</strong>
+                        </th>
+                    </tr>
+                    <tr>
+                       <?php foreach ($projectview as $project) : ?>
+                        <td>
+                            <?php echo $project['projectname']; ?>
+                        </td>
+                        <td>
+                            <?php echo $project['projecttype']; ?>
+                        </td>
+                         <td>
+                            <?php echo $project['projectstartdate']; ?>
+                        </td>
+                        <td>
+                            <?php echo $project['yarnbrand']; ?> <?php echo $project['yarnweight']; ?> Weight in <?php echo $project['yarncolor']; ?>
+                        </td>
+                        <td>
+                            <?php echo $project['needlebrand']; ?> <?php echo $project['needletype']; ?> Size <?php echo $project['needlesize']; ?>
+                        </td>   
+                        <td>
+                            <?php echo $project['miscname']; ?>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </table>
+ 
     </section>
 </main>
 <?php include '../view/footer.php'; ?>

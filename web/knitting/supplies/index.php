@@ -32,52 +32,23 @@ switch( $action ) {
     case 'view_yarn' :
         $yarnid = filter_input(INPUT_GET, 'yarnid', 
             FILTER_VALIDATE_INT);   
-        if ($yarnid == NULL || $yarnid == FALSE) {
-            $error = 'Missing or incorrect project id.';
-            include('../errors/error.php');
-        } else {
             $yarns = get_yarn();
-        }
-        // Get yarn data
-        
-        $yarnbrand = $yarns['yarnbrand'];
-        $yarncolor = $yarns['yarncolor'];
-        $yarnweight = $yarns['yarnweight'];
-        $yarnamount = $yarns['yarnamount'];
         
         include('../supplies/yarn_view.php');
         break;
     case 'view_needle' :
         $needleid = filter_input(INPUT_GET, 'needleid', 
             FILTER_VALIDATE_INT);   
-        if ($needleid == NULL || $needleid == FALSE) {
-            $error = 'Missing or incorrect project id.';
-            include('../errors/error.php');
-        } else {
-            $needles = get_needle();
-        }
-        // Get needle data
         
-        $needlebrand = $needle['needlebrand'];
-        $needletype = $needle['needletype'];
-        $needlesize = $needle['needlesize'];
-        $needleamount = $needle['needleamount'];
+            $needles = get_needle();
         
         include('../supplies/needle_view.php');
         break;   
     case 'view_misc' :
         $miscid = filter_input(INPUT_GET, 'miscid', 
             FILTER_VALIDATE_INT);   
-        if ($miscid == NULL || $miscid == FALSE) {
-            $error = 'Missing or incorrect project id.';
-            include('../errors/error.php');
-        } else {
-            $miscs = get_yarn();
-        }
-        // Get misc data
         
-        $miscname = $misc['miscname'];
-        $miscamount = $misc['miscamount'];
+            $miscs = get_misc();
         
         include('../supplies/misc_view.php');
         break;

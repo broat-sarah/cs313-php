@@ -2,19 +2,41 @@
 <main>
     
     <section>
-        <h1 id="projectViewHeading">Needles</h1>
-        <div id="left_column">
+        <h1>Needles</h1>
 
-        </div>
-
-        <div id="right_column">
-            <p><b>Needle Brand:</b> <?php echo $needlebrand; ?></p>
-            <p><b>Needle Type:</b> <?php echo $needletype; ?></p>
-            <p><b>Needle Size:</b> <?php echo $needlesize; ?></p>
-            <p><b>Needle Amount:</b> <?php echo $needleamount; ?></p>
-            
-            </form>
-        </div>
+        <table>
+                    <tr>
+                        <th>
+                            <strong>Needle Brand</strong>
+                        </th>
+                        <th>
+                            <strong>Needle Size</strong>
+                        </th>
+                        <th>
+                            <strong>Needle Amount</strong>
+                        </th>
+                        <th>
+                            <strong>Needle Type</strong>
+                        </th>
+                    </tr>
+                    <tr>
+                       <?php foreach ($needles as $needle) : ?>
+                        <td>
+                            <?php echo $needle['needlebrand']; ?>
+                        </td>
+                        <td>
+                            <?php echo $needle['needlesize']; ?>
+                        </td>
+                        <td>
+                            <?php echo $needle['needleamount']; ?>
+                        </td>
+                        <td>
+                            <?php echo $needle['needletype']; ?>
+                        </td>   
+                    </tr>
+                    <?php endforeach; ?>
+                </table>
+        
     </section>
 </main>
 <?php include '../view/footer.php'; ?>

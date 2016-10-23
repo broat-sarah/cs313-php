@@ -6,7 +6,9 @@ function get_yarn() {
               ORDER BY yarnid';
     $statement = $db->prepare($query);
     $statement->execute();
-    return $statement;    
+    $yarns = $statement->fetchAll();
+    $statement->closeCursor();
+    return $yarns;      
 }
 
 function get_yarn_by_project($yarnid) {

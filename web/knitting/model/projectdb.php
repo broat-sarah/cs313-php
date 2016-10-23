@@ -10,16 +10,14 @@ function get_project() {
     return $projects;   
 }
 
-function get_project_view($yarnid, $needleid) {
+function get_project_view() {
     global $db;
     $query = 'SELECT * FROM project p
             INNER JOIN yarn y on p.yarnid = y.yarnid
-            INNER JOIN NEEDLE n on p.needleid = n.needleid
-            WHERE yarnid = :yarnid AND needleid = :needleid
+            INNER JOIN needle n on p.needleid = n.needleid
+            INNER JOIN misc m on p.miscid = m.miscid
             ORDER BY projectid ASC';    
     $statement = $db->prepare($query);
-    $statement->bindValue(':yarnid', $yarnid);
-    $statement->bindValue(':needleid', $needleid);
     $statement->execute();    
     $projectview = $statement->fetchAll();
     $statement->closeCursor();    

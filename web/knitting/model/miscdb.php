@@ -6,5 +6,7 @@ function get_misc() {
               ORDER BY miscid';
     $statement = $db->prepare($query);
     $statement->execute();
-    return $statement;    
+    $miscs = $statement->fetchAll();
+    $statement->closeCursor();
+    return $miscs;      
 }

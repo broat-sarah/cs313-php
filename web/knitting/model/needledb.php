@@ -6,6 +6,8 @@ function get_needle() {
               ORDER BY needleid';
     $statement = $db->prepare($query);
     $statement->execute();
-    return $statement;    
+    $needles = $statement->fetchAll();
+    $statement->closeCursor();
+    return $needles;       
 }
 

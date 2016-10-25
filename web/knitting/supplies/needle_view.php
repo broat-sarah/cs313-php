@@ -36,7 +36,9 @@
                     </tr>
                     <?php endforeach; ?>
                 </table>
-        
+                <br /><br />
+        <a href="index.php?action=show_add_form_needle">Add Needle</a>
+        <a href="index.php?action=list_supplies">View Supplies</a>
     </section>
 </main>
 <?php include '../view/footer.php'; ?>

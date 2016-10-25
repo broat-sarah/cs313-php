@@ -11,3 +11,19 @@ function get_needle() {
     return $needles;       
 }
 
+function add_needle($needlebrand, $needlesize, $needleamount, $needletype) {
+    global $db;
+    $query = 'INSERT INTO needle
+                 (needlebrand, needlesize, needleamount, needletype)
+              VALUES
+                 (:needlebrand, :needlesize, :needleamount, :needletype)';
+        
+    $statement = $db->prepare($query);
+    $statement->bindValue(':needlebrand', $needlebrand);
+    $statement->bindValue(':needlesize', $needlesize);
+    $statement->bindValue(':needleamount', $needleamount);
+    $statement->bindValue(':needletype', $needletype);
+    $statement->execute();
+    $statement->closeCursor();
+}
+

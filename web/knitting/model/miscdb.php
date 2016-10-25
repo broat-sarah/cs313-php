@@ -10,3 +10,17 @@ function get_misc() {
     $statement->closeCursor();
     return $miscs;      
 }
+
+function add_misc($miscname, $miscamount) {
+    global $db;
+    $query = 'INSERT INTO misc
+                 (miscname, miscamount)
+              VALUES
+                 (:miscname, :miscamount)';
+        
+    $statement = $db->prepare($query);
+    $statement->bindValue(':miscname', $miscname);
+    $statement->bindValue(':miscamount', $miscamount);
+    $statement->execute();
+    $statement->closeCursor();
+}

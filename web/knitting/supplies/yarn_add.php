@@ -6,8 +6,6 @@
 
             <label>Brand:</label>
             <input type="text" name="yarnbrand"> <br>
-
-            <input type="hidden" name="yarnid">
             
             <label>Weight:</label>
             <input type="text" name="yarnweight"><br>
@@ -21,10 +19,10 @@
             <label>&nbsp;</label>
             <input type="submit" value="Save Changes"><br>
         </form>
-    <p class="last_paragraph">
-        <a href="index.php?action=view_yarn">View Yarns</a>
+    <div class="bottomlinks">
+        <a href="index.php?action=view_yarn">View Yarns</a><br />
         <a href="index.php?action=list_supplies">View Supplies</a>
-    </p>
+    </div>
 
 </main>
 <?php include '../view/footer.php'; ?>

@@ -7,15 +7,18 @@ body {
     background-color: #DAD8EA;
     border: 2px solid #383276;
 }
+
 header {
     height: 50px;
     border-bottom: 10px solid #383276;
     padding: .5em 0;
     background-color: #DAD8EA;
 }
-header img {
+header a {
     display: block;
-    margin-left: 48%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 40px;
 }
 
 
@@ -76,4 +79,8 @@ table, tr, td, th {
     text-align: left;
 }
 
-
+.bottomlinks {
+    text-align: center;
+    padding-bottom: 20px;
+    line-height: 1.5em;
+}

@@ -6,8 +6,6 @@
 
             <label>Brand:</label>
             <input type="text" name="needlebrand"> <br>
-
-            <input type="hidden" name="needleid">
             
             <label>Size:</label>
             <input type="text" name="needlesize"><br>
@@ -21,10 +19,10 @@
             <label>&nbsp;</label>
             <input type="submit" value="Save Changes"><br>
         </form>
-    <p class="last_paragraph">
-        <a href="index.php?action=view_needle">View Needles</a>
+    <div class="bottomlinks">
+        <a href="index.php?action=view_needle">View Needles</a><br />
         <a href="index.php?action=list_supplies">View Supplies</a>
-    </p>
+    </div>
 
 </main>
 <?php include '../view/footer.php'; ?>

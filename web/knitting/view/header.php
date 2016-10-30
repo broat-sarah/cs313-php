@@ -9,4 +9,4 @@
 
 <!-- the body section -->
 <body>
-    <header><a href ="../index.php"><img src="../images/logo.jpg" alt="Logo"></a></header>
+    <header><a href ="../index.php">KnittingPal</a></header>

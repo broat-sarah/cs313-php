@@ -40,17 +40,31 @@
                             <?php echo $yarn['yarnamount']; ?>
                         </td>   
                         <td>
-                            <a href="index.php?action=show_edit_form_yarn">Edit</a>
+                            <form action="index.php" method="post" id="yarn_edit">
+                            <input type="hidden" name="action"
+                                   value="show_edit_form_yarn">
+                            <input type="hidden" name="yarnid"
+                                   value="<?php echo $yarn['yarnid']; ?>">
+                            <input type="submit" value="Edit">
+                            </form>
                         </td>
                         <td>
-                            <input type="button" action="yarn_delete" name="yarn_delete" value="Delete">
+                            <form action="index.php" method="post">
+                                <input type="hidden" name="action"
+                                       value="yarn_delete">
+                                <input type="hidden" name="yarnid"
+                                       value="<?php echo $yarn['yarnid']; ?>">
+                                <input type="submit" value="Delete">
+                            </form>
                         </td>
                     </tr>
                     <?php endforeach; ?>
                 </table>
         <br /><br />
-        <a href="index.php?action=show_add_form_yarn">Add Yarn</a>
-        <a href="index.php?action=list_supplies">View Supplies</a>
+        <div class="bottomlinks">
+            <a href="index.php?action=show_add_form_yarn">Add Yarn</a><br />
+            <a href="index.php?action=list_supplies">View Supplies</a>
+        </div>
     </section>
 </main>
 <?php include '../view/footer.php'; ?>

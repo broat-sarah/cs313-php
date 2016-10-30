@@ -9,19 +9,21 @@
 
 <!-- the body section -->
 <body>
-    <header><img src="images/logo.jpg" alt="Logo"></header>
+    <header><a href ="../index.php">KnittingPal</a></header>
 
 <main>
     <h1>Menu</h1>
-    <ul>
-        
-        <li>
-            <a href="project/index.php">Knitting Projects</a>
-        </li>
-        <li>
-            <a href="supplies/index.php">Knitting Supplies</a>
-        </li>
-        
-    </ul>
+    <div class="bottomlinks">
+        <ul>
+
+            <li>
+                <a href="project/index.php">Knitting Projects</a>
+            </li>
+            <li>
+                <a href="supplies/index.php">Knitting Supplies</a>
+            </li>
+
+        </ul>
+    </div>
 </main>
 <?php include 'view/footer.php'; ?>

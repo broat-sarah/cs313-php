@@ -11,6 +11,18 @@ function get_yarn() {
     return $yarns;      
 }
 
+function get_a_yarn($yarnid) {
+    global $db;
+    $query = 'SELECT * FROM yarn
+              WHERE yarnid = :yarnid';
+    $statement = $db->prepare($query);
+    $statement->bindValue(":yarnid", $yarnid);
+    $statement->execute();
+    $ayarn = $statement->fetch();
+    $statement->closeCursor();
+    return $ayarn;    
+}
+
 function get_yarn_by_project($yarnid) {
     global $db;
     $query = 'SELECT * FROM project
@@ -63,4 +75,14 @@ function edit_yarn($yarnbrand, $yarnweight, $yarnamount, $yarncolor, $yarnid) {
     $statement->execute();
     $statement->closeCursor();
     echo "Successfully updated the yarn information";
+}
+
+function delete_yarn($yarnid) {
+    global $db;
+    $query = 'DELETE FROM yarn
+              WHERE yarnid = :yarnid';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':yarnid', $yarnid);
+    $statement->execute();
+    $statement->closeCursor();
 }
